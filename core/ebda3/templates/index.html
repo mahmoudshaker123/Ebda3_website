@@ -1,0 +1,530 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع شركة وكالة رقمية">
+    <title>EBDA3</title>
+    <!-- icon -->
+    <link rel="icon" href="{% static 'img/logo.jpg' %}" type="image/x-icon">
+    <!-- fonts google -->
+    <link href="https://fonts.googleapis.com/css2?family=Qahiri&family=Rakkas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Qahiri&family=Rakkas&display=swap" rel="stylesheet">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- main styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+
+<body>
+
+    <!-- Preloader Start -->
+     
+    <div class="loader">
+        <span>إ</span>
+        <span>إ</span>
+        <span>ب</span>
+        <span>د</span>
+        <span>ا</span>
+        <span>ع</span>
+        <span style="margin-right: 10px;"></span> <!-- المسافة بين الكلمتين -->
+        <span>ل</span>
+        <span>ل</span>
+        <span>ت</span>
+        <span>ص</span>
+        <span>م</span>
+        <span>ي</span>
+        <span>م</span>
+        
+    
+    </div> 
+    <!-- Preloader End -->
+
+    <!-- Start Nav -->
+    <nav class="nav">
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    إبداع 
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li>
+                        <a href="#">ماذا عنا</a>
+                    </li>
+                    <li>
+                        <a href="#">خدماتنا</a>
+                    </li>
+                    <li>
+                        <a href="#">الاخبار</a>
+                    </li>
+                    <li>
+                        <a href="#">تواصل معنا</a>
+                    </li>
+                </ul>
+                <div class="toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul class="links-mobile">
+                    <li>
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li>
+                        <a href="#">ماذا عنا</a>
+                    </li>
+                    <li>
+                        <a href="#">خدماتنا</a>
+                    </li>
+                    <li>
+                        <a href="#">الاخبار</a>
+                    </li>
+                    <li>
+                        <a href="#">تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <style>
+        .nav {
+            background-color: transparent; /* اللون الافتراضي للخلفية */
+            transition: background-color 0.3s, box-shadow 0.3s; /* إضافة تأثير التغيير */
+        }
+    
+        .nav.scrolled {
+            background-color: #fff; /* الخلفية البيضاء عند التمرير */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف عند التمرير */
+        }
+    
+        .nav.scrolled .links a {
+            color: #000; /* تغيير لون النص إلى الأسود عند التمرير */
+        }
+    
+        .links a {
+            color: #333; /* اللون الافتراضي للرابط */
+            text-decoration: none;
+        }
+    </style>
+    
+    <script>
+        // إضافة كود JavaScript للتحقق من التمرير
+        window.addEventListener("scroll", function() {
+            const nav = document.querySelector(".nav");
+            if (window.scrollY > 50) { // عند التمرير لأسفل أكثر من 50px
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
+    
+    <!--End Nav -->
+
+    <!--Start Hero Image -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="hero-content">
+                    <h2>شركة إبداع للتصميم</h2>
+                    <p>شركة متخصصة في أعمال التشطيبات والديكورات، بالإضافة إلى التصميمات الهندسية الداخلية والخارجية. <br> نقدم أيضًا خدمات المقاولات العامة، مع الحرص على تقديم أعلى معايير الجودة والابتكار في كل مشروع.</p>
+                    <div class="hero-btn">
+                        <a href="#" class="btn btn-lg">المزيد عنا <i class="fa fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Hero Image -->
+
+    <!--Start Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-items">
+                <!-- 
+                <div class="features-item">
+                    <div class="hover-line">
+                        <img src="img/features/1.png" alt="feature 1">
+                        <span class="features-text">التسوق البحثي</span>
+                        <h3 class="features-head">نمو السوق && تحليل متقدم</h3>
+                    </div>
+                </div>
+                <div class="features-item">
+                    <div class="hover-line">
+                        <img src="img/features/2.png" alt="feature 2">
+                        <span class="features-text">الخدمات الجديدة</span>
+                        <h3 class="features-head">الحلول المجانية && بنك لوان</h3>
+                    </div>
+                </div>
+                <div class="features-item">
+                    <div class="hover-line">
+                        <img src="img/features/4.png" alt="feature 3">
+                        <span class="features-text">التسوق عبر الانترنت</span>
+                        <h3 class="features-head">الاشخاص المستهدفين</h3>
+                    </div>
+                </div>
+            </div>
+            -->
+
+
+
+            <div class="offers-section">
+                <div class="offers-header">
+                    <h1 class="big-head">عروضنا وباقات الأسعار</h1>
+                </div>
+
+            <div class="offers-container">
+                <!-- العرض الأول -->
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <h3>عرض 1: معاينة مجانية</h3>
+                    </div>
+                    <div class="offer-body">
+                        <p>هنوضحلك فيها كل الافكار اللي تتماشي مع حضرتك لتصميم داخلي وخارجي يتناسب مع ذوقك واحتياجاتك.</p>
+                    </div>
+                    <div class="offer-footer">
+                        <button class="btn-contact">للتواصل والإستفسار</button>
+                    </div>
+                </div>
+            
+                <!-- العرض الثاني -->
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <h3>عرض 2: تصميم 3D و 2D مجاني</h3>
+                    </div>
+                    <div class="offer-body">
+                        <p>تصميم 3D مجاني، تصميم 2D لتوزيع الفرش، وشوب دروينج خاص بالسباكه والكهرباء، كل ده مجاني.</p>
+                    </div>
+                    <div class="offer-footer">
+                        <button class="btn-contact">للتواصل والإستفسار</button>
+                    </div>
+                </div>
+            
+                <!-- العرض الثالث -->
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <h3>عرض 3: خصم 5% على جميع الباقات</h3>
+                    </div>
+                    <div class="offer-body">
+                        <p>خصم 5% على جميع باقات شركة Ebda3 Design عند التعاقد معانا.</p>
+                    </div>
+                    <div class="offer-footer">
+                        <button class="btn-contact">للتواصل والإستفسار</button>
+                    </div>
+                </div>
+            
+                <!-- العرض الرابع -->
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <h3>عرض 4: نظام تقسيط</h3>
+                    </div>
+                    <div class="offer-body">
+                        <p>بنوفر لحضرتك نظام تقسيط على تشطيب الوحدة حسب احتياجك.</p>
+                    </div>
+                    <div class="offer-footer">
+                        <button class="btn-contact">للتواصل والإستفسار</button>
+                    </div>
+                </div>
+            
+                <!-- العرض الخامس -->
+                <div class="offer-card">
+                    <div class="offer-header">
+                        <h3>عرض 5: ضمانات طويلة الأمد</h3>
+                    </div>
+                    <div class="offer-body">
+                        <p>ضمان 15 سنة على تأسيس الكهرباء والسباكة، و5 سنوات على السيراميك والدهانات والصحي والديكور ضد عيوب الصناعة.</p>
+                    </div>
+                    <div class="offer-footer">
+                        <button class="btn-contact">للتواصل والإستفسار</button>
+                    </div>
+                </div>
+            </div>
+            
+           
+            
+        </div>
+    </div>
+    </section>
+    <!--End Features -->
+
+    <!-- Start About -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-col">
+                    <div class="info">
+                        <h3 class="head">ماذا عنا</h3>
+                        <h4 class="big-head">شركة إبداع للتصميم </h4>
+                        <p>هي واحدة من الشركات الرائدة في مجال التشطيبات والديكورات، حيث نقدم حلول تصميم هندسية مبتكرة ومتخصصة للمساحات الداخلية والخارجية. نحن نسعى جاهدين لتحقيق أعلى معايير الجودة في جميع مشاريعنا، مع التركيز على الابتكار والإبداع في كل تفصيلة. بالإضافة إلى ذلك، نقدم خدمات المقاولات العامة، ملتزمين بتوفير بيئات عمل عملية وجميلة تلبّي جميع احتياجات عملائنا وتتفوق على توقعاتهم.</p>
+                       <!--<a href="#" class="about-btn">رؤية المزيد</a>--> 
+                    </div>
+                </div>
+                <div class="about-col">
+                    <div class="about-image">
+                        <img src="{% static 'img/about/service16.jpg' %}" alt="about image">
+                        <div class="video-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About -->
+
+    <!-- Start Achivments -->
+    <section class="achivement">
+        <div class="container">
+            <div class="acivement-content">
+                <div class="column">
+                    <div class="line-up">
+                        <div class="line-down">
+                            <div class="numbers">
+                                <div class="nums">
+                                    <span class="num" data-goal="24">+10</span>
+                                    <span>مكاتب</span>
+                                </div>
+                                <div class="nums">
+                                    <span class="num" data-goal="120">+80</span>
+                                    <span>عملاء</span>
+                                </div>
+                                <div class="nums">
+                                    <span class="num" data-goal="18">+20</span>
+                                    <span>عمال</span>
+                                </div>
+                                <div class="nums">
+                                    <span class="num" data-goal="230">+20</span>
+                                    <span>مشاريع</span>
+                                </div>
+                            </div>
+                            <div class="text">إبداع للتصميم</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="info">
+                        <h3 class="head">الانجازات</h3>
+                        <h4 class="big-head">اكتمال اكثر من خمسين عمل موثوق به.</h4>
+                        <p>في شركة إبداع للتصميم، نفخر بإنجاز أكثر من خمسين مشروعًا بنجاح في مجالات التشطيبات والديكورات. نحن نلتزم بتقديم حلول تصميم مبتكرة تلبي احتياجات عملائنا وتتفوق على توقعاتهم، مع ضمان أعلى مستويات الجودة والاحترافية في كل مشروع.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Achivments -->
+
+    <!-- Start Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-header">
+                <div class="info">
+                    <h4 class="big-head">معرض الاعمال</h4>
+                </div> <!-- <div class="gallery-btn">
+                    <a href="#" class="showBtn">مشاهدة الاعمال</a>
+                </div>
+                 -->
+                
+            </div>
+        </div>
+        <div class="gallery-images">
+            <div class="image">
+                <img src="{% static 'img/gallery/one.jpg' %}" alt="one">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/two.jpg' %}" alt="two">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/three.jpg' %}" alt="three">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/four.jpg' %}" alt="four">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/five.jpg' %}" alt="one">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/six.jpg' %}" alt="two">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/seven.jpg' %}" alt="three">
+            </div>
+            <div class="image">
+                <img src="{% static 'img/gallery/eight.jpg' %}" alt="four">
+            </div>
+        </div>
+    </section>
+    <!-- End Gallery -->
+
+    <!--  
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="testimonials__header">
+                <div class="info">
+                    <h3 class="head">الآراء</h3>
+                    <h4 class="big-head">ماذا قال عملائنا ؟</h4>
+                </div>
+            </div>
+            <div class="testimonials__row">
+                <div class="testimonials__slide">
+                    <div class="testimonials__review">
+                        <p class="testimonials__text">
+                            هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.
+                        </p>
+                        <div class="testimonials__person__info">
+                            <span class="testimonials__name">احمد فرج</span>
+                            <span class="testimonials__job">مبرمج</span>
+                        </div>
+                    </div>
+                    <div class="testimonials__image">
+                        <img src="img/testmonials/profile-pic.png" alt="testimonials">
+                        <div class="testimonials__back"></div>
+                        <div class="testimonials__back small"></div>
+                    </div>
+                </div>
+                <div class="testimonials__slide">
+                    <div class="testimonials__review">
+                        <p class="testimonials__text">
+                            اكتب يا تاريخ عن النادي العريــــق، الذي عودنا على الفوز الأنيـــــق، وعن حقك لا ارض ان يبعدونــــي، فأنت عشقي الأول فلا عنك يبعدونــــي، وسوف اضل اقول كتلونــــي</p>
+                        <div class="testimonials__person__info">
+                            <span class="testimonials__name">عصام الشوالي</span>
+                            <span class="testimonials__job">معلق مباريات</span>
+                        </div>
+                    </div>
+                    <div class="testimonials__image">
+                        <img src="img/testmonials//Issam_Chaouali.png" alt="testimonials">
+                        <div class="testimonials__back"></div>
+                        <div class="testimonials__back small"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     End testimonials --> 
+
+                                
+
+    <!-- start Newsletter -->
+    <section class="contact-us" id="contact-us">
+        <div class="container">
+            <div class="contact-us__content">
+                <div class="contact-us__header">
+                    <div class="info">
+                        <h4 class="big-head">للتواصل معنا</h4>
+                    </div>
+                    <p class="contact-us__content-p">تواصل معنا عبر وسائل التواصل الاجتماعي المتاحة لدينا، نحن هنا للإجابة على جميع استفساراتك ومساعدتك في كل ما تحتاجه.</p>
+                </div>
+                <div class="contact-us__social">
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <a href="https://www.facebook.com/profile.php?id=100086633168247" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <p>فيسبوك</p>
+                        </div>
+                        <div class="social-icon">
+                            <a href="https://wa.me/01067343755" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <p>واتس أب</p>
+                        </div>
+                        <div class="social-icon">
+                            <a href="https://www.instagram.com/ebda3designegy/" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <p>إنستغرام</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- end Newsletter -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <div class="footer__column">
+                    <div class="footer_home">
+                        <h3 class="footer__title">إبداع للتصميم</h3>
+                        <p class="footer__home-desc">شركة متخصصة في أعمال التشطيبات والديكورات، بالإضافة إلى التصميمات الهندسية الداخلية والخارجية.
+                            نقدم أيضًا خدمات المقاولات العامة، مع الحرص على تقديم أعلى معايير الجودة والابتكار في كل مشروع.</p>
+                    </div>
+                </div>
+               
+                <div class="footer__column">
+                    <h3 class="footer__title">العنوان</h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="https://maps.app.goo.gl/XzVRa8YikcjNSJ3Y7" target="_blank">شارع الغشام, Zagazig, Egypt</a>
+                        </li>
+                        <li>
+                            <a href="mailto:ebda3design2@gmail.com">ebda3design2@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/201067343755" target="_blank">01067343755</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="copyright">
+            <p>حقوق النشر محفوظة. &copy; تم تطويره بواسطة <a href="https://www.linkedin.com/in/mahmoud-shaker889/" target="_blank">محمود شاكر</a></p>
+        </div>
+        
+        
+    </footer>
+
+
+    <!-- Start Video Popup Menu -->
+    <div class="video-popup">
+        <div class="video-popup-inner ">
+            <i class="fas fa-times video-popup-close "></i>
+            <div class="iframe-box">
+                <iframe width="560" height="615" src="https://ahmedfarag18.github.io/BrazilianFood/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- End Video Popup Menu -->
+
+    <!-- Start Color Switcher -->
+    <div class="color-switcher">
+        <div class="switcher-btn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <h3>Select Color</h3>
+        <div class="theme-buttons-conatiners">
+            <span class="theme-buttons active" data-color="#e74c3c" style="background: #e74c3c;"></span>
+            <span class="theme-buttons" data-color="#8e44ad" style="background: #8e44ad;"></span>
+            <span class="theme-buttons" data-color="#27ae60" style="background: #27ae60;"></span>
+            <span class="theme-buttons" data-color="#009ec6" style="background: #009ec6;"></span>
+        </div>
+    </div>
+    <!-- End Color Switcher -->
+
+    <!-- Up To Top Button -->
+    <button class="btnUp">👆</button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
