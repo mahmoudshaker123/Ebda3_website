@@ -1200,3 +1200,32 @@ preloader
     margin-bottom: 40px; /* إضافة مسافة بين العنوان والعروض */
     text-align: center;
 }
+
+
+
+.offers-details-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f8f9fa; /* لون الخلفية */
+}
+
+.offers-details-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-large {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff; /* لون الزر */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-large:hover {
+    background-color: #0056b3; /* لون الزر عند التحويم */
+}

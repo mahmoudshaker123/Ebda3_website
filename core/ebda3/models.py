@@ -1,4 +1,8 @@
 from django.db import models
+from datetime import datetime
+from django.utils import timezone
+import os
+
 
 # Create your models here.
 
@@ -9,12 +13,15 @@ class Home(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
 
 class Offer(models.Model):
     title = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     content = models.TextField()
     url = models.URLField(default='https://wa.me/201067343755')
+    offer_link = models.URLField(default='https://drive.google.com/file/d/1P_UBPWF6hiK5M_Jqd4D5LHFD6Tq_X8RG/view')
 
     def __str__(self):
         return self.title
@@ -25,12 +32,12 @@ class About(models.Model):
     intro_content = models.TextField()   
     main_content = models.TextField()   
     img = models.ImageField(upload_to='about/', verbose_name="about")
+    project_count = models.CharField(max_length=200, default='عدد المشاريع')
 
-    office = models.DecimalField(max_digits=10, decimal_places=2, default=0) 
-    users = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    projects = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    workers = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-
+    office = models.IntegerField(default=0) 
+    users = models.IntegerField(default=0)
+    projects = models.IntegerField(default=0)
+    workers = models.IntegerField(default=0)
     def __str__(self):
         return self.title
 
@@ -57,9 +64,24 @@ class ContactUs(models.Model):
         return self.title
     
 
+
 class BusinessGallery(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, blank=True)
     image = models.ImageField(upload_to='gallery/', verbose_name="gallery")
+    created_at = models.DateTimeField(auto_now_add=True)  # حفظ وقت الإضافة تلقائيًا
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)  # حفظ الصورة الجديدة أولًا
+
+        # الاحتفاظ فقط بآخر 20 صورة وحذف الأقدم
+        images = BusinessGallery.objects.order_by('-created_at')  # ترتيب تنازلي حسب الأحدث
+        if images.count() > 20:
+            old_images = images[20:]  # تحديد الصور الزائدة
+            for img in old_images:
+                if img.image:  # حذف الملف الفعلي من الميديا
+                    if os.path.exists(img.image.path):
+                        os.remove(img.image.path)
+                img.delete()  # حذف السجل من قاعدة البيانات
 
     def __str__(self):
         return self.title

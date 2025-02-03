@@ -1,27 +1,10 @@
 from django.shortcuts import render
 from .models import *
 
-# Create your views here.
-
-
-def home(request):
+def index(request):
     home = Home.objects.last()
-    return render(request, 'index.html', {'home': home})
-
-
-def offer(request):
     offers = Offer.objects.all()
-    return render(request, 'index.html', {'offers': offers})
-
-
-
-def about(request):
     about = About.objects.last()
-    return render(request, 'index.html', {'about': about})
-
-
-def contact(request):
-    contact = ContactUs.objects.last()
-    return render(request, 'index.html', {'contact': contact})
-
-
+    contact_us = ContactUs.objects.last()
+    gallery = BusinessGallery.objects.all().order_by('-created_at')[:20]  # ترتيب الصور حسب تاريخ الإنشاء
+    return render(request, 'index.html', {'home': home, 'offers': offers, 'about': about , 'gallery': gallery , 'contact_us': contact_us})
