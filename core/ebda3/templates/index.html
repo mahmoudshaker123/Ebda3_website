@@ -431,9 +431,16 @@
 
     <!-- Start Color Switcher -->
     <div class="color-switcher">
-        <a href="{{contact_us.whatsapp_number}}" target="_blank" class="switcher-btn">
+        <!-- زر واتساب -->
+        <a href="https://wa.me/{{contact_us.whatsapp_number}}" target="_blank" class="switcher-btn">
             <i class="fab fa-whatsapp"></i>
         </a>
+        
+        <!-- زر الاتصال -->
+        <a href="tel:{{contact_us.phone_number}}" class="switcher-btn phone-btn">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    
         <h3>Select Color</h3>
         <div class="theme-buttons-conatiners">
             <span class="theme-buttons active" data-color="#e74c3c" style="background: #e74c3c;"></span>
@@ -442,6 +449,7 @@
             <span class="theme-buttons" data-color="#009ec6" style="background: #009ec6;"></span>
         </div>
     </div>
+    
     
     <!-- End Color Switcher -->
 

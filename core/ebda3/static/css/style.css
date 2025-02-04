@@ -79,14 +79,14 @@ scrollbar
 /*=====================================
 Color Switcher
 ================================== */
-/* زر واتساب المحسن */
+/* زر واتساب */
 .switcher-btn {
     position: absolute;
     top: 10px;
     left: 210px;
     background-color: #25D366; /* لون واتساب */
     padding: 15px;
-    font-size: 24px;
+    font-size: 20px;  /* تم تصغير حجم الأيقونة */
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -100,19 +100,46 @@ Color Switcher
 /* أيقونة واتساب */
 .switcher-btn i {
     color: white;
+    font-size: 20px; /* تم تصغير حجم الأيقونة */
 }
 
 /* تأثير التحويم (Hover) */
 .switcher-btn:hover {
-    background-color: #128C7E; /* تغيير اللون عند التحويم */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التحويم */
-    transform: scale(1.1); /* تكبير الزر عند التحويم */
-    animation: pulse-hover 1.5s ease-out infinite; /* إضافة تأثير نبض */
+    background-color: #128C7E;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    animation: pulse-hover 1.5s ease-out infinite;
 }
 
-/* تأثير النقر (Click) */
-.switcher-btn:active {
-    transform: scale(0.9); /* تصغير الزر عند النقر */
+/* زر الاتصال */
+.phone-btn {
+    position: absolute;
+    top: 80px; /* تغيير الموضع ليكون تحت زر واتساب */
+    left: 210px;
+    background-color: #34b7f1; /* لون زر الاتصال */
+    padding: 15px;
+    font-size: 20px;  /* تم تصغير حجم الأيقونة */
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* أيقونة الاتصال */
+.phone-btn i {
+    color: white;
+    font-size: 20px; /* تم تصغير حجم الأيقونة */
+}
+
+/* تأثير التحويم (Hover) لزر الاتصال */
+.phone-btn:hover {
+    background-color: #007bb5; /* لون أكثر ظلمة عند التحويم */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
 }
 
 /* تأثير نبض الزر عند التحويم */
@@ -143,6 +170,7 @@ Color Switcher
 .color-switcher.active {
     left: 0;
 }
+
 
 /*================================
 Up to top Button 
