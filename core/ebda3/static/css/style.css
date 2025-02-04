@@ -79,39 +79,56 @@ scrollbar
 /*=====================================
 Color Switcher
 ================================== */
-
-.color-switcher h3 {
-    color: var(--mainColor);
-    border-bottom: 1px solid #3333;
-    font-size: 20px;
-    padding: 5px 0;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
+/* زر واتساب المحسن */
 .switcher-btn {
     position: absolute;
-    color: var(--mainColor);
-    top: 0px;
-    left: 200px;
-    background-color: #d5d5d5;
-    padding: 10px 15px;
-    font-size: 20px;
+    top: 10px;
+    left: 210px;
+    background-color: #25D366; /* لون واتساب */
+    padding: 15px;
+    font-size: 24px;
     cursor: pointer;
-    /* box-shadow: 0 0 10px 2px #ddd; */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* أيقونة واتساب */
 .switcher-btn i {
-    color: var(--mainColor);
-    animation: spin 4s infinite linear;
+    color: white;
 }
 
-@keyframes spin {
+/* تأثير التحويم (Hover) */
+.switcher-btn:hover {
+    background-color: #128C7E; /* تغيير اللون عند التحويم */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التحويم */
+    transform: scale(1.1); /* تكبير الزر عند التحويم */
+    animation: pulse-hover 1.5s ease-out infinite; /* إضافة تأثير نبض */
+}
+
+/* تأثير النقر (Click) */
+.switcher-btn:active {
+    transform: scale(0.9); /* تصغير الزر عند النقر */
+}
+
+/* تأثير نبض الزر عند التحويم */
+@keyframes pulse-hover {
+    0% {
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(37, 211, 102, 0.5);
+    }
     100% {
-        transform: rotate(360deg);
+        box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
     }
 }
 
+/* إعدادات زر الظهور في الصفحة */
 .color-switcher {
     position: fixed;
     top: 25%;
@@ -120,35 +137,12 @@ Color Switcher
     padding: 10px;
     background: #d5d5d5;
     z-index: 1000;
-    transition: all .5s;
-    /* box-shadow: 0 0 10px 2px #ddd; */
+    transition: all 0.5s;
 }
 
 .color-switcher.active {
     left: 0;
 }
-
-.theme-buttons-conatiners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.theme-buttons {
-    width: calc(100% / 2);
-    height: 40px;
-    width: 40px;
-    border-radius: 50px;
-    /* margin: 5px; */
-    cursor: pointer;
-    opacity: .5;
-}
-
-.color-switcher .theme-buttons.active {
-    opacity: 1;
-    border: 3px solid #fff;
-}
-
 
 /*================================
 Up to top Button 
@@ -312,7 +306,7 @@ nav
 /* hero */
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(../img/bg/1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(../img/bg/2.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
