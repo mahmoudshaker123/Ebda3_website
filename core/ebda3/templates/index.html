@@ -51,12 +51,12 @@
         <div class="container">
             <div class="row">
                 <!-- تحويل "إبداع" إلى رابط -->
-                <div class="logo">
+                <div class="logo" onclick="location.href='#home';">
+                    <img src="{% static 'img/logo.jpg' %}" alt="لوجو الشركة">
+
                     <a href="#home">إبداع</a>
-
-                    <img src="{% static 'img/logo.jpg' %}" >
-
                 </div>
+                
                 <ul class="links">
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#offers">خدماتنا</a></li>
@@ -122,44 +122,47 @@
                 const menu = document.querySelector(".links-mobile");
                 const menuLinks = document.querySelectorAll(".links-mobile a");
         
-                // ✅ عند التمرير، يتم تغيير لون زر القائمة
+                let isMenuOpen = false; // متغير لحفظ حالة القائمة
+        
+                // ✅ تغيير لون زر المينيو عند التمرير
                 window.addEventListener("scroll", function () {
                     if (window.scrollY > 50) { 
                         nav.classList.add("scrolled");
-                        toggleIcon.style.color = "#000";  // تغيير لون زر المينيو إلى الأسود
+                        toggleIcon.style.color = "#000";  
                     } else {
                         nav.classList.remove("scrolled");
-                        toggleIcon.style.color = "#fff";  // إرجاع اللون الأبيض عند العودة للأعلى
+                        toggleIcon.style.color = "#fff";  
                     }
                 });
         
-                // ✅ عند الضغط على زر القائمة، يتم فتحها/إغلاقها
+                // ✅ فتح/إغلاق القائمة عند الضغط على زر المينيو
                 toggleBtn.addEventListener("click", function () {
-                    menu.classList.toggle("open");
+                    isMenuOpen = !isMenuOpen; // تبديل الحالة
         
-                    // ✅ ضبط الإظهار والإخفاء بناءً على وجود الكلاس open
-                    if (menu.classList.contains("open")) {
+                    if (isMenuOpen) {
                         menu.style.opacity = "1";
                         menu.style.visibility = "visible";
-                        menu.style.transform = "translate(0%, 0%)";
+                        menu.style.transform = "translateY(0%)";
                     } else {
                         menu.style.opacity = "0";
                         menu.style.visibility = "hidden";
-                        menu.style.transform = "translate(0%, -100%)";
+                        menu.style.transform = "translateY(-100%)";
                     }
                 });
         
                 // ✅ عند الضغط على أي رابط داخل القائمة، سيتم إغلاقها تلقائيًا
-                menuLinks.forEach(function (link) {
+                menuLinks.forEach(link => {
                     link.addEventListener("click", function () {
-                        menu.classList.remove("open");
+                        isMenuOpen = false; // تعيين الحالة على مغلق
                         menu.style.opacity = "0";
                         menu.style.visibility = "hidden";
-                        menu.style.transform = "translate(0%, -100%)";
+                        menu.style.transform = "translateY(-100%)";
                     });
                 });
             });
         </script>
+        
+        
         
     
     <!--End Nav -->
