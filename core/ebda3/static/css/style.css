@@ -178,17 +178,17 @@ Up to top Button
 
 nav 
 =====================================*/
-
 .nav {
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
-    padding: 20px 0;
+    padding: 12px 0;  /* تقليل التباعد العلوي والسفلي */
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     transition: var(--transition-time) ease-in-out;
     z-index: 999;
 }
+
 
 .nav .row {
     justify-content: space-between;
