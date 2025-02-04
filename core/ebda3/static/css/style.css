@@ -3,6 +3,7 @@ Global styles
 ==================================== */
 
 
+
 :root {
     --mainColor: #e74c3c;
     --white: #fff;
@@ -154,22 +155,6 @@ Up to top Button
 =====================================*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .btnUp {
     position: fixed;
     right: 20px;
@@ -294,6 +279,19 @@ nav
     border-bottom: none;
 }
 
+/* عند الضغط على زر المينيو تظهر القائمة */
+.links-mobile.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+}
+
+/* عند التمرير، تأكد أن زر المينيو يكون مرئيًا */
+.nav.scrolled .toggle i {
+    color: #000 !important;  /* تأكد أن لون الزر واضح عند التمرير */
+}
+
+/*=============================
 
 /* hero */
 
