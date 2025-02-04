@@ -215,7 +215,22 @@ nav
     font-weight: 700;
     font-family: 'Rakkas', cursive;
     color: var(--mainColor);
+    display: flex; /* جعل النص والصورة بجانب بعض */
+    align-items: center; /* محاذاة العناصر في المنتصف */
+    gap: 10px; /* إضافة مسافة بين الكلمة واللوجو */
+    flex-direction: row-reverse; /* جعل اللوجو في اليسار */
 }
+
+.logo img {
+    height: 30px; /* جعل حجم اللوجو أصغر */
+    width: auto;
+}
+
+.logo a {
+    text-decoration: none; /* إزالة التسطير من الرابط */
+    color: inherit; /* استخدام نفس لون "إبداع" */
+}
+
 
 .nav .toggle {
     display: none;
