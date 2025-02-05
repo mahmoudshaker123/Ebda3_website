@@ -29,9 +29,9 @@ class Offer(models.Model):
 
 class About(models.Model):
     title = models.CharField(max_length=200 , default='ماذا عنا')
-    intro_content = models.TextField()   
-    main_content = models.TextField()   
-    img = models.ImageField(upload_to='about/', verbose_name="about")
+    intro_content = models.TextField(default='هي واحدة من الشركات الرائدة في مجال التشطيبات والديكورات، حيث نقدم حلول تصميم هندسية مبتكرة ومتخصصة للمساحات الداخلية والخارجية. نحن نسعى جاهدين لتحقيق أعلى معايير الجودة في جميع مشاريعنا، مع التركيز على الابتكار والإبداع في كل تفصيلة. بالإضافة إلى ذلك، نقدم خدمات المقاولات العامة ملتزمين بتوفير بيئات عمل عملية وجميلة تلبي جميع احتياجات عملائنا وتتفوق على توقعاتهم.')   
+    main_content = models.TextField(default='في شركة إبداع للتصميم، نفخر بإنجاز أكثر من خمسين مشروعًا بنجاح في مجالات التشطيبات والديكورات. نحن نلتزم بتقديم حلول تصميم مبتكرة تلبي احتياجات عملائنا وتتفوق على توقعاتهم، مع ضمان أعلى مستويات الجودة والاحترافية في كل مشروع.')   
+    img = models.ImageField(upload_to='about/', verbose_name="about", blank=True)
     project_count = models.CharField(max_length=200, default='عدد المشاريع')
 
     office = models.IntegerField(default=0) 
@@ -50,6 +50,7 @@ class ContactUs(models.Model):
     title = models.CharField(max_length=200)
     email = models.EmailField(default='ebda3design2@gmail.com')
     whatsapp_number = models.CharField(default='https://wa.me/201067343755', max_length=200)
+    phone_number = models.CharField(default='01067343755', max_length=200)
     location_url = models.URLField(blank=True, null=True)  # رابط الموقع على الخريطة
     
 

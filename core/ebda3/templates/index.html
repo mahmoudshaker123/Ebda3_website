@@ -387,13 +387,13 @@
                     <h3 class="footer__title">العنوان</h3>
                     <ul class="footer__links">
                         <li>
-                            <a href="https://maps.app.goo.gl/XzVRa8YikcjNSJ3Y7" target="_blank">شارع الغشام, Zagazig, Egypt</a>
+                            <a href="{{contact_us.location_url}}" target="_blank">{{contact_us.location}}</a>
                         </li>
                         <li>
-                            <a href="mailto:ebda3design2@gmail.com">ebda3design2@gmail.com</a>
+                            <a href="mailto:{{contact_us.email}}">{{contact_us.email}}</a>
                         </li>
                         <li>
-                            <a href="https://wa.me/201067343755" target="_blank">01067343755</a>
+                            <a href="{{contact_us.whatsapp_number}}" target="_blank">{{contact_us.phone_number}}</a>
                         </li>
                     </ul>
                 </div>
@@ -407,10 +407,10 @@
 
 
         <div class="copyright">
-            <p>حقوق النشر محفوظة.
-             &copy; تم تطويره بواسطة <a href="https://www.linkedin.com/in/mahmoud-shaker889/" target="_blank">محمود شاكر</a></p>
+            <p class="top-text">&copy;حقوق النشر محفوظة.</p>
+            <p class="bottom-text">  تم تطويره بواسطة <a href="https://www.linkedin.com/in/mahmoud-shaker889/" target="_blank">محمود شاكر</a></p>
         </div>
-
+        
 
         
         
@@ -423,7 +423,7 @@
         <div class="video-popup-inner ">
             <i class="fas fa-times video-popup-close "></i>
             <div class="iframe-box">
-                <iframe width="560" height="615" src="https://ahmedfarag18.github.io/BrazilianFood/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="615" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -432,7 +432,7 @@
     <!-- Start Color Switcher -->
     <div class="color-switcher">
         <!-- زر واتساب -->
-        <a href="https://wa.me/{{contact_us.whatsapp_number}}" target="_blank" class="switcher-btn">
+        <a href="{{contact_us.whatsapp_number}}" target="_blank" class="switcher-btn">
             <i class="fab fa-whatsapp"></i>
         </a>
         

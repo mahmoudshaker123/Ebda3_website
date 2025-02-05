@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ebda3',
+        'USER': 'postgres',
+        'PASSWORD': 'mahmoud',
+        'HOST': 'localhost',  # أو الـ IP بتاع السيرفر لو مش شغال على نفس الجهاز
+        'PORT': '5432',  # البورت الافتراضي للـ PostgreSQL
     }
 }
 
