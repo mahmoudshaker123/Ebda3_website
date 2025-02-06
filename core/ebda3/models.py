@@ -32,26 +32,26 @@ class About(models.Model):
     intro_content = models.TextField(default='هي واحدة من الشركات الرائدة في مجال التشطيبات والديكورات، حيث نقدم حلول تصميم هندسية مبتكرة ومتخصصة للمساحات الداخلية والخارجية. نحن نسعى جاهدين لتحقيق أعلى معايير الجودة في جميع مشاريعنا، مع التركيز على الابتكار والإبداع في كل تفصيلة. بالإضافة إلى ذلك، نقدم خدمات المقاولات العامة ملتزمين بتوفير بيئات عمل عملية وجميلة تلبي جميع احتياجات عملائنا وتتفوق على توقعاتهم.')   
     main_content = models.TextField(default='في شركة إبداع للتصميم، نفخر بإنجاز أكثر من خمسين مشروعًا بنجاح في مجالات التشطيبات والديكورات. نحن نلتزم بتقديم حلول تصميم مبتكرة تلبي احتياجات عملائنا وتتفوق على توقعاتهم، مع ضمان أعلى مستويات الجودة والاحترافية في كل مشروع.')   
     img = models.ImageField(upload_to='about/', verbose_name="about", blank=True)
-    project_count = models.CharField(max_length=200, default='عدد المشاريع')
+    project_count = models.CharField(max_length=200, default='خمسين')
 
-    office = models.IntegerField(default=0) 
-    users = models.IntegerField(default=0)
-    projects = models.IntegerField(default=0)
-    workers = models.IntegerField(default=0)
+    office = models.IntegerField(default=1) 
+    users = models.IntegerField(default=24)
+    projects = models.IntegerField(default=13)
+    workers = models.IntegerField(default=20)
     def __str__(self):
         return self.title
 
     
 
 class ContactUs(models.Model):
-    facebook = models.URLField(default='https://www.facebook.com/ebda3design')
-    instgram = models.URLField(default='https://www.instagram.com/ebda3design')
+    facebook = models.URLField(default='https://www.facebook.com/profile.php?id=100086633168247')
+    instgram = models.URLField(default='https://www.instagram.com/ebda3designegy/')
     location = models.CharField(max_length=200, default='شارع الغشام, Zagazig, Egypt')
-    title = models.CharField(max_length=200)
+    title = models.CharField(default='ماذا عنا', max_length=200) 
     email = models.EmailField(default='ebda3design2@gmail.com')
     whatsapp_number = models.CharField(default='https://wa.me/201067343755', max_length=200)
     phone_number = models.CharField(default='01067343755', max_length=200)
-    location_url = models.URLField(blank=True, null=True)  # رابط الموقع على الخريطة
+    location_url = models.URLField(default='https://maps.app.goo.gl/XzVRa8YikcjNSJ3Y7' , blank=True, null=True)  # رابط الموقع على الخريطة
     
 
     def save(self, *args, **kwargs):
@@ -66,18 +66,24 @@ class ContactUs(models.Model):
     
 
 
+
+
 class BusinessGallery(models.Model):
     title = models.CharField(max_length=200, blank=True)
     image = models.ImageField(upload_to='gallery/', verbose_name="gallery")
     created_at = models.DateTimeField(auto_now_add=True)  # حفظ وقت الإضافة تلقائيًا
 
     def save(self, *args, **kwargs):
+        if not self.title and self.created_at:
+            # توليد العنوان بناءً على الوقت الذي تم رفع الصورة فيه
+            self.title = f"Image_{self.created_at.strftime('%Y%m%d_%H%M%S')}"
+
         super().save(*args, **kwargs)  # حفظ الصورة الجديدة أولًا
 
-        # الاحتفاظ فقط بآخر 20 صورة وحذف الأقدم
+        # الاحتفاظ فقط بآخر 50 صورة وحذف الأقدم
         images = BusinessGallery.objects.order_by('-created_at')  # ترتيب تنازلي حسب الأحدث
-        if images.count() > 20:
-            old_images = images[20:]  # تحديد الصور الزائدة
+        if images.count() > 50:
+            old_images = images[50:]  # تحديد الصور الزائدة
             for img in old_images:
                 if img.image:  # حذف الملف الفعلي من الميديا
                     if os.path.exists(img.image.path):
