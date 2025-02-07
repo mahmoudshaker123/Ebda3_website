@@ -51,45 +51,49 @@
         <div class="container">
             <div class="row">
                 <!-- تحويل "إبداع" إلى رابط -->
-                <div class="logo" onclick="location.href='#home';">
+                <div class="logo" onclick="scrollToSection('home')">
                     <img src="{% static 'img/logo.jpg' %}" alt="لوجو الشركة">
-
-                    <a href="#home">إبداع</a>
+                    <a href="javascript:void(0);">إبداع</a>
                 </div>
                 
+                <!-- روابط الأقسام -->
                 <ul class="links">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#offers">خدماتنا</a></li>
-                    <li><a href="#about-us">ماذا عنا</a></li>
-                    <li><a href="#gallery">معرض الأعمال</a></li>
-                    <li><a href="#contact-us">تواصل معنا</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('home')">الرئيسية</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('offers')">خدماتنا</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('about-us')">ماذا عنا</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('gallery')">معرض الأعمال</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('contact-us')">تواصل معنا</a></li>
                 </ul>
-        
     
+                <!-- القائمة الجانبية -->
                 <div class="toggle">
                     <i class="fa fa-bars"></i>
                 </div>
                 <ul class="links-mobile">
-                    <li>
-                        <a href="#home">الرئيسية</a>
-                    </li>
-                   
-                    <li>
-                        <a href="#offers">خدماتنا</a>
-                    </li>
-                    <li>
-                        <a href="#about-us">ماذا عنا</a>
-                    </li>
-                    <li>
-                        <a href="#gallery">معرض الأعمال</a>
-                    </li>
-                    <li>
-                        <a href="#contact-us">تواصل معنا</a>
-                    </li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('home')">الرئيسية</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('offers')">خدماتنا</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('about-us')">ماذا عنا</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('gallery')">معرض الأعمال</a></li>
+                    <li><a href="javascript:void(0);" onclick="scrollToSection('contact-us')">تواصل معنا</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
+    <!-- JavaScript لإزالة الـ # -->
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                // التمرير السلس
+                section.scrollIntoView({ behavior: 'smooth' });
+    
+                // تعديل الـ URL بدون #
+                const newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
+                window.history.pushState(null, null, newUrl);
+            }
+        }
+    </script>
     
 
         <style>
@@ -175,8 +179,10 @@
                     <h2>شركة إبداع للتصميم</h2>
                     <p>شركة متخصصة في أعمال التشطيبات والديكورات، بالإضافة إلى التصميمات الهندسية الداخلية والخارجية. <br> نقدم أيضًا خدمات المقاولات العامة، مع الحرص على تقديم أعلى معايير الجودة والابتكار في كل مشروع.</p>
                     <div class="hero-btn">
-                        <a href="#about-us" class="btn btn-lg">المزيد عنا <i class="fa fa-arrow-left"></i></a>
-                    </div>
+                        <a href="javascript:void(0);" onclick="scrollToSection('about-us')" class="btn btn-lg">
+                            المزيد عنا <i class="fa fa-arrow-left"></i>
+                        </a>
+                                            </div>
                 </div>
             </div>
         </div>
